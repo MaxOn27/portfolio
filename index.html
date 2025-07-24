@@ -26,6 +26,8 @@
     
     <script defer src="./scripts/me-loader.js"></script>
     <script defer src="./scripts/about-loader.js"></script>
+    <script defer src="./scripts/portfolio-loader.js"></script>
+    <script defer src="./scripts/contacts-loader.js"></script>
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
@@ -100,122 +102,32 @@
         </section>
         <section id="portfolio">
             <div class="portfolio-container">
-                <h2 class="portfolio-title">Portfolio</h2>
+                <h2 id="portfolio-title" class="portfolio-title"></h2>
                 
                 <div class="portfolio-section">
                     <h3 class="section-title">
                         <i class="fas fa-code" aria-hidden="true"></i>
-                        Skills
+                        <span id="portfolio-skills-title"></span>
                     </h3>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h4>Frontend</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">React</span>
-                                <span class="skill-tag">Vue.js</span>
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">TypeScript</span>
-                                <span class="skill-tag">HTML5</span>
-                                <span class="skill-tag">CSS3</span>
-                                <span class="skill-tag">Sass</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Backend</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">Node.js</span>
-                                <span class="skill-tag">Python</span>
-                                <span class="skill-tag">Express</span>
-                                <span class="skill-tag">FastAPI</span>
-                                <span class="skill-tag">REST APIs</span>
-                                <span class="skill-tag">GraphQL</span>
-                            </div>
-                        </div>
-                        <div class="skill-category">
-                            <h4>Database & Tools</h4>
-                            <div class="skill-tags">
-                                <span class="skill-tag">PostgreSQL</span>
-                                <span class="skill-tag">MongoDB</span>
-                                <span class="skill-tag">Redis</span>
-                                <span class="skill-tag">Git</span>
-                                <span class="skill-tag">Docker</span>
-                                <span class="skill-tag">AWS</span>
-                            </div>
-                        </div>
+                    <div id="portfolio-skills-container" class="skills-grid">
                     </div>
                 </div>
 
-                <!-- Experience Section -->
                 <div class="portfolio-section">
                     <h3 class="section-title">
                         <i class="fas fa-briefcase" aria-hidden="true"></i>
-                        Experience
+                        <span id="portfolio-experience-title"></span>
                     </h3>
-                    <div class="experience-timeline">
-                        <div class="experience-item">
-                            <div class="experience-period">2021 - Present</div>
-                            <div class="experience-content">
-                                <h4>Full-Stack Developer</h4>
-                                <p class="experience-company">Freelance & Contract Work</p>
-                                <p class="experience-description">
-                                    Developed and maintained web applications using modern technologies. 
-                                    Collaborated with clients to deliver scalable solutions, focusing on clean code 
-                                    architecture and user experience optimization.
-                                </p>
-                                <div class="experience-highlights">
-                                    <span>• Built 15+ responsive web applications</span>
-                                    <span>• Improved application performance by 40%</span>
-                                    <span>• Mentored junior developers in best practices</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="experience-item">
-                            <div class="experience-period">2020 - 2021</div>
-                            <div class="experience-content">
-                                <h4>Frontend Developer</h4>
-                                <p class="experience-company">Tech Startup, Ukraine</p>
-                                <p class="experience-description">
-                                    Specialized in React-based frontend development with focus on component 
-                                    architecture and state management. Worked closely with UX/UI designers 
-                                    to implement pixel-perfect interfaces.
-                                </p>
-                                <div class="experience-highlights">
-                                    <span>• Developed reusable component library</span>
-                                    <span>• Implemented responsive design patterns</span>
-                                    <span>• Collaborated with cross-functional teams</span>
-                                </div>
-                            </div>
-                        </div>
+                    <div id="portfolio-experience-container" class="experience-timeline">
                     </div>
                 </div>
 
-                <!-- Hobbies Section -->
                 <div class="portfolio-section">
                     <h3 class="section-title">
                         <i class="fas fa-heart" aria-hidden="true"></i>
-                        Hobbies & Interests
+                        <span id="portfolio-hobbies-title"></span>
                     </h3>
-                    <div class="hobbies-grid">
-                        <div class="hobby-card">
-                            <i class="fas fa-laptop-code" aria-hidden="true"></i>
-                            <h4>Open Source</h4>
-                            <p>Contributing to open-source projects and building tools for the developer community</p>
-                        </div>
-                        <div class="hobby-card">
-                            <i class="fas fa-book" aria-hidden="true"></i>
-                            <h4>Continuous Learning</h4>
-                            <p>Always exploring new technologies, frameworks, and programming paradigms</p>
-                        </div>
-                        <div class="hobby-card">
-                            <i class="fas fa-users" aria-hidden="true"></i>
-                            <h4>Tech Community</h4>
-                            <p>Participating in developer meetups, conferences, and knowledge-sharing sessions</p>
-                        </div>
-                        <div class="hobby-card">
-                            <i class="fas fa-rocket" aria-hidden="true"></i>
-                            <h4>Side Projects</h4>
-                            <p>Building personal projects to experiment with new ideas and technologies</p>
-                        </div>
+                    <div id="portfolio-hobbies-container" class="hobbies-grid">
                     </div>
                 </div>
             </div>
@@ -223,38 +135,12 @@
         
         <section id="contacts">
             <div class="contacts-container">
-                <h2 class="contacts-title">Get in touch</h2>
+                <h2 id="contacts-title" class="contacts-title"></h2>
                 
                 <div class="contacts-content">
-                    <p class="contacts-description">
-                        Feel free to reach out to me through any of the following platforms. 
-                        I'm always open to discussing new opportunities, collaborations, or just having a chat about technology!
-                    </p>
+                    <p id="contacts-description" class="contacts-description"></p>
                     
-                    <div class="contacts-links">
-                        <a href="https://www.linkedin.com/in/🇺🇦max-tyzhnenko🇺🇦-9a5a321b4" target="_blank" class="contact-link linkedin">
-                            <i class="fab fa-linkedin" aria-hidden="true"></i>
-                            <div class="contact-info">
-                                <h3>LinkedIn</h3>
-                                <span>Connect with me professionally</span>
-                            </div>
-                        </a>
-                        
-                        <a href="https://github.com/MaxOn27" target="_blank" class="contact-link github">
-                            <i class="fab fa-github" aria-hidden="true"></i>
-                            <div class="contact-info">
-                                <h3>GitHub</h3>
-                                <span>Check out my projects and code</span>
-                            </div>
-                        </a>
-                        
-                        <a href="mailto:maksym.tyzhnenko@gmail.com" class="contact-link gmail">
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                            <div class="contact-info">
-                                <h3>Gmail</h3>
-                                <span>maksym.tyzhnenko@gmail.com</span>
-                            </div>
-                        </a>
+                    <div id="contacts-links-container" class="contacts-links">
                     </div>
                 </div>
             </div>
