@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts>
+    <title>Get in touch</title>
+    <description>Feel free to reach out to me through any of the following platforms. I'm always open to discussing new opportunities, collaborations, or just having a chat about technology!</description>
+    
+    <links>
+        <link>
+            <href>https://www.linkedin.com/in/🇺🇦max-tyzhnenko🇺🇦-9a5a321b4</href>
+            <target>_blank</target>
+            <cssClass>contact-link linkedin</cssClass>
+            <icon>fab fa-linkedin</icon>
+            <title>LinkedIn</title>
+            <description>Connect with me professionally</description>
+        </link>
+        <link>
+            <href>https://github.com/MaxOn27</href>
+            <target>_blank</target>
+            <cssClass>contact-link github</cssClass>
+            <icon>fab fa-github</icon>
+            <title>GitHub</title>
+            <description>Check out my projects and code</description>
+        </link>
+        <link>
+            <href>mailto:maxym271212@gmail.com</href>
+            <target></target>
+            <cssClass>contact-link gmail</cssClass>
+            <icon>fas fa-envelope</icon>
+            <title>Gmail</title>
+            <description>maxym271212@gmail.com</description>
+        </link>
+    </links>
+</contacts>

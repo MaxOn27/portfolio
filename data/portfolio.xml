@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<portfolio>
+    <title>Portfolio</title>
+    
+    <skills>
+        <title>Skills</title>
+        <categories>
+            <category>
+                <name>Frontend</name>
+                <tags>
+                    <tag>React</tag>
+                    <tag>Vue.js</tag>
+                    <tag>JavaScript</tag>
+                    <tag>TypeScript</tag>
+                    <tag>HTML5</tag>
+                    <tag>CSS3</tag>
+                    <tag>Sass</tag>
+                </tags>
+            </category>
+            <category>
+                <name>Backend</name>
+                <tags>
+                    <tag>Node.js</tag>
+                    <tag>Python</tag>
+                    <tag>Express</tag>
+                    <tag>FastAPI</tag>
+                    <tag>REST APIs</tag>
+                    <tag>GraphQL</tag>
+                </tags>
+            </category>
+            <category>
+                <name>Database &amp; Tools</name>
+                <tags>
+                    <tag>PostgreSQL</tag>
+                    <tag>MongoDB</tag>
+                    <tag>Redis</tag>
+                    <tag>Git</tag>
+                    <tag>Docker</tag>
+                    <tag>AWS</tag>
+                </tags>
+            </category>
+        </categories>
+    </skills>
+    
+    <experience>
+        <title>Experience</title>
+        <items>
+            <item>
+                <period>2021 - Present</period>
+                <role>Full-Stack Developer</role>
+                <company>Freelance &amp; Contract Work</company>
+                <description>Developed and maintained web applications using modern technologies. Collaborated with clients to deliver scalable solutions, focusing on clean code architecture and user experience optimization.</description>
+                <highlights>
+                    <highlight>• Built 15+ responsive web applications</highlight>
+                    <highlight>• Improved application performance by 40%</highlight>
+                    <highlight>• Mentored junior developers in best practices</highlight>
+                </highlights>
+            </item>
+            <item>
+                <period>2020 - 2021</period>
+                <role>Frontend Developer</role>
+                <company>Tech Startup, Ukraine</company>
+                <description>Specialized in React-based frontend development with focus on component architecture and state management. Worked closely with UX/UI designers to implement pixel-perfect interfaces.</description>
+                <highlights>
+                    <highlight>• Developed reusable component library</highlight>
+                    <highlight>• Implemented responsive design patterns</highlight>
+                    <highlight>• Collaborated with cross-functional teams</highlight>
+                </highlights>
+            </item>
+        </items>
+    </experience>
+    
+    <hobbies>
+        <title>Hobbies &amp; Interests</title>
+        <items>
+            <item>
+                <icon>fas fa-laptop-code</icon>
+                <title>Open Source</title>
+                <description>Contributing to open-source projects and building tools for the developer community</description>
+            </item>
+            <item>
+                <icon>fas fa-book</icon>
+                <title>Continuous Learning</title>
+                <description>Always exploring new technologies, frameworks, and programming paradigms</description>
+            </item>
+            <item>
+                <icon>fas fa-users</icon>
+                <title>Tech Community</title>
+                <description>Participating in developer meetups, conferences, and knowledge-sharing sessions</description>
+            </item>
+            <item>
+                <icon>fas fa-rocket</icon>
+                <title>Side Projects</title>
+                <description>Building personal projects to experiment with new ideas and technologies</description>
+            </item>
+        </items>
+    </hobbies>
+</portfolio>
