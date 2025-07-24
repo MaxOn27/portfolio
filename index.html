@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Maksym Tyzhnenko - Full-Stack Engineer with 3+ years experience. Passionate about clean code, rapid learning, and collaborative development.">
+    <meta name="keywords" content="full-stack developer, software engineer, web developer, Maksym Tyzhnenko, Ukraine developer">
+    <meta name="author" content="Maksym Tyzhnenko">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./styles/base.css">
+    <link rel="stylesheet" href="./styles/layout.css">
+    <link rel="stylesheet" href="./styles/themes.css">
+    <link rel="stylesheet" href="./styles/components/me.css">
+    <link rel="stylesheet" href="./styles/components/portfolio.css">
+    <link rel="stylesheet" href="styles/components/contacts.css">
+    <link rel="stylesheet" href="./styles/components/about.css">
+    <link rel="stylesheet" href="./styles/responsive.css">
+    
+    <title>Maksym Tyzhnenko - Full-Stack Engineer</title>
+    
+    <!-- Data loaders -->
+    <script defer src="./scripts/me-loader.js"></script>
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <header class="header-section" role="banner">
+        <div class="site-header-name">Maksym T.</div>
+        <nav class="site-header" role="navigation" aria-label="Main navigation">
+            <a href="#me" aria-label="Go to Me section">Me</a>
+            <span class="nav-separator" aria-hidden="true">|</span>
+            <a href="#about" aria-label="Go to About section">About</a>
+            <span class="nav-separator" aria-hidden="true">|</span>
+            <a href="#portfolio" aria-label="Go to Portfolio section">Portfolio</a>
+            <span class="nav-separator" aria-hidden="true">|</span>
+            <a href="#contacts" aria-label="Go to Contacts section">Contacts</a>
+        </nav>
+    </header>
+    <main id="main" class="main-portfolio" role="main">
+        <section id="me">
+            <img id="me-avatar" src="" alt="" width="500" height="600" loading="lazy">
+            <div class="me-profession">
+                <h2 id="me-name"></h2>
+                <h2 id="me-title"></h2>
+                <p>
+                    <span id="me-about-label"></span>
+                    <br>
+                    <br>
+                    <span id="me-description"></span>
+                </p>
+            </div>
+        </section>
+        <section id="about">
+            <div class="about-container">
+                <h2 class="about-title">About Me</h2>
+                
+                <div class="about-content">
+                    <!-- Developer Introduction -->
+                    <div class="about-intro">
+                        <div class="intro-text">
+                            <h3>Hello! I'm Maksym</h3>
+                            <p class="intro-description">
+                                A passionate full-stack engineer from Chernivtsi, Ukraine, with over 3 years of experience 
+                                crafting digital solutions. I believe in writing clean, maintainable code and creating 
+                                user-centered applications that make a difference.
+                            </p>
+                            <p class="intro-mission">
+                                My mission is to bridge the gap between complex technical requirements and intuitive user 
+                                experiences, while continuously learning and growing in this ever-evolving field.
+                            </p>
+                        </div>
+                        <div class="intro-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">3+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">15+</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">∞</span>
+                                <span class="stat-label">Lines of Code</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Education Section -->
+                    <div class="about-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                            Education & Learning
+                        </h3>
+                        <div class="education-timeline">
+                            <div class="education-item">
+                                <div class="education-period">2018 - 2022</div>
+                                <div class="education-content">
+                                    <h4>Bachelor of Computer Science</h4>
+                                    <p class="education-institution">Chernivtsi National University, Ukraine</p>
+                                    <p class="education-description">
+                                        Focused on software engineering principles, algorithms, and data structures. 
+                                        Completed coursework in web development, database systems, and software architecture.
+                                    </p>
+                                    <div class="education-highlights">
+                                        <span>• Software Engineering & Design Patterns</span>
+                                        <span>• Data Structures & Algorithms</span>
+                                        <span>• Web Development Technologies</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education-item">
+                                <div class="education-period">2020 - Present</div>
+                                <div class="education-content">
+                                    <h4>Continuous Learning</h4>
+                                    <p class="education-institution">Online Platforms & Certifications</p>
+                                    <p class="education-description">
+                                        Committed to staying current with industry trends through online courses, 
+                                        certifications, and hands-on projects with modern technologies.
+                                    </p>
+                                    <div class="education-highlights">
+                                        <span>• React & Vue.js Advanced Patterns</span>
+                                        <span>• Cloud Computing (AWS)</span>
+                                        <span>• DevOps & CI/CD Practices</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Development Philosophy -->
+                    <div class="about-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-lightbulb" aria-hidden="true"></i>
+                            Development Philosophy
+                        </h3>
+                        <div class="philosophy-grid">
+                            <div class="philosophy-item">
+                                <i class="fas fa-code" aria-hidden="true"></i>
+                                <h4>Clean Code</h4>
+                                <p>Writing readable, maintainable code that stands the test of time and scale.</p>
+                            </div>
+                            <div class="philosophy-item">
+                                <i class="fas fa-users" aria-hidden="true"></i>
+                                <h4>Collaboration</h4>
+                                <p>Believing in the power of teamwork and open communication to achieve great results.</p>
+                            </div>
+                            <div class="philosophy-item">
+                                <i class="fas fa-rocket" aria-hidden="true"></i>
+                                <h4>Innovation</h4>
+                                <p>Embracing new technologies and methodologies to solve problems creatively.</p>
+                            </div>
+                            <div class="philosophy-item">
+                                <i class="fas fa-heart" aria-hidden="true"></i>
+                                <h4>User-Centric</h4>
+                                <p>Prioritizing user experience and accessibility in every project I work on.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Personal Journey -->
+                    <div class="about-section">
+                        <h3 class="section-title">
+                            <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+                            My Journey
+                        </h3>
+                        <div class="journey-content">
+                            <p>
+                                My path to software development began during university, where I discovered my passion for 
+                                creating digital solutions. What started as curiosity about how websites work evolved into 
+                                a deep appreciation for the craft of programming.
+                            </p>
+                            <p>
+                                Throughout my career, I've had the opportunity to work on diverse projects, from small 
+                                business websites to complex web applications. Each project has taught me something new 
+                                and reinforced my belief that technology should serve people and make their lives better.
+                            </p>
+                            <p>
+                                Today, I'm actively seeking new challenges and opportunities to grow, collaborate with 
+                                talented teams, and contribute to meaningful projects that have a positive impact.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="portfolio">
+            <div class="portfolio-container">
+                <h2 class="portfolio-title">Portfolio</h2>
+                
+                <!-- Skills Section -->
+                <div class="portfolio-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-code" aria-hidden="true"></i>
+                        Skills
+                    </h3>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Frontend</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Vue.js</span>
+                                <span class="skill-tag">JavaScript</span>
+                                <span class="skill-tag">TypeScript</span>
+                                <span class="skill-tag">HTML5</span>
+                                <span class="skill-tag">CSS3</span>
+                                <span class="skill-tag">Sass</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Backend</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">Node.js</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Express</span>
+                                <span class="skill-tag">FastAPI</span>
+                                <span class="skill-tag">REST APIs</span>
+                                <span class="skill-tag">GraphQL</span>
+                            </div>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Database & Tools</h4>
+                            <div class="skill-tags">
+                                <span class="skill-tag">PostgreSQL</span>
+                                <span class="skill-tag">MongoDB</span>
+                                <span class="skill-tag">Redis</span>
+                                <span class="skill-tag">Git</span>
+                                <span class="skill-tag">Docker</span>
+                                <span class="skill-tag">AWS</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Section -->
+                <div class="portfolio-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-briefcase" aria-hidden="true"></i>
+                        Experience
+                    </h3>
+                    <div class="experience-timeline">
+                        <div class="experience-item">
+                            <div class="experience-period">2021 - Present</div>
+                            <div class="experience-content">
+                                <h4>Full-Stack Developer</h4>
+                                <p class="experience-company">Freelance & Contract Work</p>
+                                <p class="experience-description">
+                                    Developed and maintained web applications using modern technologies. 
+                                    Collaborated with clients to deliver scalable solutions, focusing on clean code 
+                                    architecture and user experience optimization.
+                                </p>
+                                <div class="experience-highlights">
+                                    <span>• Built 15+ responsive web applications</span>
+                                    <span>• Improved application performance by 40%</span>
+                                    <span>• Mentored junior developers in best practices</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="experience-item">
+                            <div class="experience-period">2020 - 2021</div>
+                            <div class="experience-content">
+                                <h4>Frontend Developer</h4>
+                                <p class="experience-company">Tech Startup, Ukraine</p>
+                                <p class="experience-description">
+                                    Specialized in React-based frontend development with focus on component 
+                                    architecture and state management. Worked closely with UX/UI designers 
+                                    to implement pixel-perfect interfaces.
+                                </p>
+                                <div class="experience-highlights">
+                                    <span>• Developed reusable component library</span>
+                                    <span>• Implemented responsive design patterns</span>
+                                    <span>• Collaborated with cross-functional teams</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hobbies Section -->
+                <div class="portfolio-section">
+                    <h3 class="section-title">
+                        <i class="fas fa-heart" aria-hidden="true"></i>
+                        Hobbies & Interests
+                    </h3>
+                    <div class="hobbies-grid">
+                        <div class="hobby-card">
+                            <i class="fas fa-laptop-code" aria-hidden="true"></i>
+                            <h4>Open Source</h4>
+                            <p>Contributing to open-source projects and building tools for the developer community</p>
+                        </div>
+                        <div class="hobby-card">
+                            <i class="fas fa-book" aria-hidden="true"></i>
+                            <h4>Continuous Learning</h4>
+                            <p>Always exploring new technologies, frameworks, and programming paradigms</p>
+                        </div>
+                        <div class="hobby-card">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                            <h4>Tech Community</h4>
+                            <p>Participating in developer meetups, conferences, and knowledge-sharing sessions</p>
+                        </div>
+                        <div class="hobby-card">
+                            <i class="fas fa-rocket" aria-hidden="true"></i>
+                            <h4>Side Projects</h4>
+                            <p>Building personal projects to experiment with new ideas and technologies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contacts">
+            <div class="contacts-container">
+                <h2 class="contacts-title">Get in touch</h2>
+                
+                <div class="contacts-content">
+                    <p class="contacts-description">
+                        Feel free to reach out to me through any of the following platforms. 
+                        I'm always open to discussing new opportunities, collaborations, or just having a chat about technology!
+                    </p>
+                    
+                    <div class="contacts-links">
+                        <a href="https://www.linkedin.com/in/🇺🇦max-tyzhnenko🇺🇦-9a5a321b4" target="_blank" class="contact-link linkedin">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
+                            <div class="contact-info">
+                                <h3>LinkedIn</h3>
+                                <span>Connect with me professionally</span>
+                            </div>
+                        </a>
+                        
+                        <a href="https://github.com/MaxOn27" target="_blank" class="contact-link github">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <div class="contact-info">
+                                <h3>GitHub</h3>
+                                <span>Check out my projects and code</span>
+                            </div>
+                        </a>
+                        
+                        <a href="mailto:maksym.tyzhnenko@gmail.com" class="contact-link gmail">
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            <div class="contact-info">
+                                <h3>Gmail</h3>
+                                <span>maksym.tyzhnenko@gmail.com</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

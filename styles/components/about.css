@@ -1,0 +1,351 @@
+/* About Section Styles */
+#about {
+  padding: var(--spacing-xl) var(--spacing-lg);
+  text-align: left;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--portfolio-color-text);
+  margin-bottom: var(--spacing-xl);
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--spacing-xl) * 1.5);
+}
+
+/* Developer Introduction Section */
+.about-intro {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.intro-text h3 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--portfolio-color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.intro-description {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: var(--portfolio-color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+.intro-mission {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--accent-color);
+  font-style: italic;
+  padding-left: var(--spacing-md);
+  border-left: 3px solid var(--accent-color);
+}
+
+.intro-stats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  background: rgba(138, 132, 132, 0.05);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(138, 132, 132, 0.1);
+}
+
+.stat-item {
+  text-align: center;
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.stat-item:hover {
+  background: rgba(138, 132, 132, 0.1);
+  transform: translateY(-2px);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: var(--spacing-xs);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: var(--portfolio-color-text);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* About Sections */
+.about-section {
+  margin-bottom: var(--spacing-xl);
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--portfolio-color-text);
+  margin-bottom: var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.section-title i {
+  color: var(--accent-color);
+  font-size: 1.75rem;
+}
+
+/* Education Timeline */
+.education-timeline {
+  position: relative;
+  padding-left: var(--spacing-lg);
+}
+
+.education-timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--accent-color);
+}
+
+.education-item {
+  position: relative;
+  margin-bottom: var(--spacing-xl);
+  padding-left: var(--spacing-lg);
+}
+
+.education-item::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  border: 3px solid var(--portfolio-bg);
+}
+
+.education-period {
+  background: var(--accent-color);
+  color: var(--color-text);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: inline-block;
+  margin-bottom: var(--spacing-sm);
+}
+
+.education-content h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--portfolio-color-text);
+  margin-bottom: var(--spacing-xs);
+}
+
+.education-institution {
+  font-size: 1.1rem;
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-bottom: var(--spacing-sm);
+}
+
+.education-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--portfolio-color-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.education-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.education-highlights span {
+  font-size: 0.95rem;
+  color: var(--portfolio-color-text);
+  line-height: 1.4;
+}
+
+/* Development Philosophy Grid */
+.philosophy-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.philosophy-item {
+  background: rgba(138, 132, 132, 0.05);
+  padding: var(--spacing-lg);
+  border-radius: var(--border-radius);
+  border: 1px solid rgba(138, 132, 132, 0.1);
+  text-align: center;
+  transition: var(--transition);
+  cursor: default;
+}
+
+.philosophy-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border-color: var(--accent-color);
+}
+
+.philosophy-item i {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: var(--spacing-md);
+  display: block;
+}
+
+.philosophy-item h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--portfolio-color-text);
+  margin-bottom: var(--spacing-sm);
+}
+
+.philosophy-item p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--portfolio-color-text);
+}
+
+/* Personal Journey */
+.journey-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.journey-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--portfolio-color-text);
+  margin-bottom: var(--spacing-md);
+  text-align: justify;
+}
+
+.journey-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 2.5rem;
+  }
+  
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .intro-text h3 {
+    font-size: 2rem;
+  }
+  
+  .intro-stats {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: var(--spacing-md);
+  }
+  
+  .stat-item {
+    padding: var(--spacing-sm);
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .section-title {
+    font-size: 1.75rem;
+  }
+  
+  .education-timeline {
+    padding-left: var(--spacing-md);
+  }
+  
+  .education-item {
+    padding-left: var(--spacing-md);
+  }
+  
+  .philosophy-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  #about {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+  
+  .about-title {
+    font-size: 2rem;
+  }
+  
+  .intro-text h3 {
+    font-size: 1.75rem;
+  }
+  
+  .intro-description {
+    font-size: 1.1rem;
+  }
+  
+  .intro-mission {
+    font-size: 1rem;
+  }
+  
+  .intro-stats {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .stat-number {
+    font-size: 1.75rem;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .education-timeline::before {
+    left: -2px;
+  }
+  
+  .education-item::before {
+    left: -8px;
+  }
+  
+  .philosophy-item {
+    padding: var(--spacing-md);
+  }
+  
+  .journey-content p {
+    font-size: 1rem;
+    text-align: left;
+  }
+}
