@@ -9,34 +9,33 @@
                 <name>Frontend</name>
                 <tags>
                     <tag>React</tag>
-                    <tag>Vue.js</tag>
                     <tag>JavaScript</tag>
                     <tag>TypeScript</tag>
                     <tag>HTML5</tag>
                     <tag>CSS3</tag>
-                    <tag>Sass</tag>
+                    <tag>SASS/SCSS</tag>
+                    <tag>Mantine</tag>
+                    <tag>Bootstrap</tag>
                 </tags>
             </category>
             <category>
                 <name>Backend</name>
                 <tags>
                     <tag>Node.js</tag>
-                    <tag>Python</tag>
                     <tag>Express</tag>
-                    <tag>FastAPI</tag>
+                    <tag>NestJS</tag>
                     <tag>REST APIs</tag>
-                    <tag>GraphQL</tag>
+                    <tag>ORMs</tag>
                 </tags>
             </category>
             <category>
                 <name>Database &amp; Tools</name>
                 <tags>
                     <tag>PostgreSQL</tag>
-                    <tag>MongoDB</tag>
                     <tag>Redis</tag>
                     <tag>Git</tag>
                     <tag>Docker</tag>
-                    <tag>AWS</tag>
+                    <tag>GCP</tag>
                 </tags>
             </category>
         </categories>
@@ -46,25 +45,39 @@
         <title>Experience</title>
         <items>
             <item>
-                <period>2021 - Present</period>
-                <role>Full-Stack Developer</role>
-                <company>Freelance &amp; Contract Work</company>
-                <description>Developed and maintained web applications using modern technologies. Collaborated with clients to deliver scalable solutions, focusing on clean code architecture and user experience optimization.</description>
+                <period>2023 - Present</period>
+                <role>Full-Stack Engineer</role>
+                <company>InterCode, Ukraine</company>
+                <description>Full-stack Engineer working with React frontend (navigation, routes, components, utils) and Node.js/NestJS backend technologies. Built scalable applications using TypeORM, PostgreSQL, GCP, and Knex for data management and cloud infrastructure. Specialized in creating and optimizing database queries for cost-effective performance.</description>
                 <highlights>
-                    <highlight>• Built 15+ responsive web applications</highlight>
-                    <highlight>• Improved application performance by 40%</highlight>
-                    <highlight>• Mentored junior developers in best practices</highlight>
+                    <highlight>• Authorization/Authentication systems implementation</highlight>
+                    <highlight>• Integration of 3rd party APIs</highlight>
+                    <highlight>• Working with BigQuery for data analytics</highlight>
+                    <highlight>• Debugging complex full-stack applications</highlight>
+                </highlights>
+            </item>
+            <item>
+                <period>2021 - 2023</period>
+                <role>Front-end Engineer</role>
+                <company>Qlicks, Ukraine</company>
+                <description>Frontend engineer working with JavaScript, jQuery, SCSS, WordPress, MySQL, and Styled Components. Developed an internal dashboard for company client (real estate investor) to view and manage real estate owners seeking investment opportunities. Practiced Agile methodology with Git version control and Underscore.js utilities.</description>
+                <highlights>
+                    <highlight>• Built dashboard for investor client to view real estate owners seeking investment</highlight>
+                    <highlight>• Implemented responsive UI using SCSS and Styled Components</highlight>
+                    <highlight>• Integrated WordPress CMS with MySQL database</highlight>
+                    <highlight>• Collaborated in Agile development environment</highlight>
                 </highlights>
             </item>
             <item>
                 <period>2020 - 2021</period>
-                <role>Frontend Developer</role>
-                <company>Tech Startup, Ukraine</company>
-                <description>Specialized in React-based frontend development with focus on component architecture and state management. Worked closely with UX/UI designers to implement pixel-perfect interfaces.</description>
+                <role>Front-end Engineer</role>
+                <company>PreferGames, Ukraine</company>
+                <description>Frontend engineer specializing in slot game development using SASS, JavaScript, React Class components, PixiJS, and canvas. Created interactive gaming experiences with smooth animations and engaging user interfaces for online slot games.</description>
                 <highlights>
-                    <highlight>• Developed reusable component library</highlight>
-                    <highlight>• Implemented responsive design patterns</highlight>
-                    <highlight>• Collaborated with cross-functional teams</highlight>
+                    <highlight>• Developed slot games using PixiJS and canvas for graphics rendering</highlight>
+                    <highlight>• Built interactive gaming components with React Class components</highlight>
+                    <highlight>• Implemented game animations and visual effects</highlight>
+                    <highlight>• Styled gaming interfaces using SASS</highlight>
                 </highlights>
             </item>
         </items>
