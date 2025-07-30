@@ -1,25 +1,12 @@
 class ContactsLoader {
     constructor() {
         this.xmlPath = './data/contacts.xml';
+        this.xmlLoader = new XMLLoader();
     }
 
     async loadContactsData() {
         try {
-            const response = await fetch(this.xmlPath);
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            const xmlText = await response.text();
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-            
-            const parseError = xmlDoc.querySelector('parsererror');
-            if (parseError) {
-                throw new Error('XML parsing error: ' + parseError.textContent);
-            }
-            
+            const xmlDoc = await this.xmlLoader.loadXML(this.xmlPath);
             this.populateContent(xmlDoc);
         } catch (error) {
             console.error('Error loading contacts data:', error);
@@ -38,13 +25,11 @@ class ContactsLoader {
     }
 
     populateTitle(title) {
-        const titleElement = document.getElementById('contacts-title');
-        if (titleElement) titleElement.textContent = title;
+        DOMPopulator.populateElement('contacts-title', title);
     }
 
     populateDescription(description) {
-        const descriptionElement = document.getElementById('contacts-description');
-        if (descriptionElement) descriptionElement.textContent = description;
+        DOMPopulator.populateElement('contacts-description', description);
     }
 
     populateLinks(links) {
@@ -79,15 +64,10 @@ class ContactsLoader {
     }
 
     handleError() {
-        console.warn('Using fallback content for contacts section');
-        
-        const titleElement = document.getElementById('contacts-title');
-        if (titleElement) titleElement.textContent = 'Get in touch';
-        
-        const descriptionElement = document.getElementById('contacts-description');
-        if (descriptionElement) {
-            descriptionElement.textContent = 'Feel free to reach out to me through any of the following platforms. I\'m always open to discussing new opportunities, collaborations, or just having a chat about technology!';
-        }
+        XMLContentUtils.handleXMLError('contacts', {
+            'contacts-title': 'Get in touch',
+            'contacts-description': 'Feel free to reach out to me through any of the following platforms. I\'m always open to discussing new opportunities, collaborations, or just having a chat about technology!'
+        });
     }
 }
 

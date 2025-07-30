@@ -1,25 +1,12 @@
 class AboutLoader {
     constructor() {
         this.xmlPath = './data/about.xml';
+        this.xmlLoader = new XMLLoader();
     }
 
     async loadAboutData() {
         try {
-            const response = await fetch(this.xmlPath);
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            const xmlText = await response.text();
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-            
-            const parseError = xmlDoc.querySelector('parsererror');
-            if (parseError) {
-                throw new Error('XML parsing error: ' + parseError.textContent);
-            }
-            
+            const xmlDoc = await this.xmlLoader.loadXML(this.xmlPath);
             this.populateContent(xmlDoc);
         } catch (error) {
             console.error('Error loading about data:', error);
@@ -54,18 +41,13 @@ class AboutLoader {
     }
 
     populateTitle(title) {
-        const titleElement = document.getElementById('about-title');
-        if (titleElement) titleElement.textContent = title;
+        DOMPopulator.populateElement('about-title', title);
     }
 
     populateIntro(greeting, description, mission) {
-        const greetingElement = document.getElementById('about-greeting');
-        const descriptionElement = document.getElementById('about-intro-description');
-        const missionElement = document.getElementById('about-intro-mission');
-
-        if (greetingElement) greetingElement.textContent = greeting;
-        if (descriptionElement) descriptionElement.textContent = description;
-        if (missionElement) missionElement.textContent = mission;
+        DOMPopulator.populateElement('about-greeting', greeting);
+        DOMPopulator.populateElement('about-intro-description', description);
+        DOMPopulator.populateElement('about-intro-mission', mission);
     }
 
     populateStats(stats) {
@@ -169,11 +151,9 @@ class AboutLoader {
     }
 
     handleError() {
-        console.warn('Using fallback content for about section');
-        
-        const titleElement = document.getElementById('about-title');
-        if (titleElement) titleElement.textContent = 'About Me';
-        
+        XMLContentUtils.handleXMLError('about', {
+            'about-title': 'About Me'
+        });
     }
 }
 
