@@ -1,25 +1,12 @@
 class PortfolioLoader {
     constructor() {
         this.xmlPath = './data/portfolio.xml';
+        this.xmlLoader = new XMLLoader();
     }
 
     async loadPortfolioData() {
         try {
-            const response = await fetch(this.xmlPath);
-            
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
-            const xmlText = await response.text();
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-            
-            const parseError = xmlDoc.querySelector('parsererror');
-            if (parseError) {
-                throw new Error('XML parsing error: ' + parseError.textContent);
-            }
-            
+            const xmlDoc = await this.xmlLoader.loadXML(this.xmlPath);
             this.populateContent(xmlDoc);
         } catch (error) {
             console.error('Error loading portfolio data:', error);
@@ -28,16 +15,13 @@ class PortfolioLoader {
     }
 
     populateContent(xmlDoc) {
-        const title = xmlDoc.querySelector('portfolio > title')?.textContent || '';
-        
-        const skillsTitle = xmlDoc.querySelector('skills title')?.textContent || '';
-        const skillCategories = xmlDoc.querySelectorAll('skills categories category');
-        
-        const experienceTitle = xmlDoc.querySelector('experience title')?.textContent || '';
-        const experienceItems = xmlDoc.querySelectorAll('experience items item');
-        
-        const hobbiesTitle = xmlDoc.querySelector('hobbies title')?.textContent || '';
-        const hobbiesItems = xmlDoc.querySelectorAll('hobbies items item');
+        const title = this.xmlLoader.extractText(xmlDoc, 'portfolio > title');
+        const skillsTitle = this.xmlLoader.extractText(xmlDoc, 'skills title');
+        const skillCategories = this.xmlLoader.extractMultiple(xmlDoc, 'skills categories category');
+        const experienceTitle = this.xmlLoader.extractText(xmlDoc, 'experience title');
+        const experienceItems = this.xmlLoader.extractMultiple(xmlDoc, 'experience items item');
+        const hobbiesTitle = this.xmlLoader.extractText(xmlDoc, 'hobbies title');
+        const hobbiesItems = this.xmlLoader.extractMultiple(xmlDoc, 'hobbies items item');
 
         this.populateTitle(title);
         this.populateSkills(skillsTitle, skillCategories);
@@ -46,27 +30,16 @@ class PortfolioLoader {
     }
 
     populateTitle(title) {
-        const titleElement = document.getElementById('portfolio-title');
-        if (titleElement) titleElement.textContent = title;
+        DOMPopulator.populateElement('portfolio-title', title);
     }
 
     populateSkills(title, categories) {
-        const titleElement = document.getElementById('portfolio-skills-title');
-        const containerElement = document.getElementById('portfolio-skills-container');
-
-        if (titleElement) titleElement.textContent = title;
-        if (!containerElement) return;
-
-        containerElement.innerHTML = '';
+        DOMPopulator.populateElement('portfolio-skills-title', title);
         
-        categories.forEach(category => {
-            const name = category.querySelector('name')?.textContent || '';
-            const tags = category.querySelectorAll('tags tag');
-            
-            let tagsHtml = '';
-            tags.forEach(tag => {
-                tagsHtml += `<span class="skill-tag">${tag.textContent}</span>`;
-            });
+        DOMPopulator.populateFromXMLNodes('portfolio-skills-container', categories, (category) => {
+            const name = this.xmlLoader.extractText(category, 'name');
+            const tags = XMLContentUtils.extractTags(category);
+            const tagsHtml = XMLContentUtils.createTagsHTML(tags);
             
             const categoryElement = document.createElement('div');
             categoryElement.className = 'skill-category';
@@ -75,30 +48,20 @@ class PortfolioLoader {
                 <div class="skill-tags">${tagsHtml}</div>
             `;
             
-            containerElement.appendChild(categoryElement);
+            return categoryElement;
         });
     }
 
     populateExperience(title, items) {
-        const titleElement = document.getElementById('portfolio-experience-title');
-        const containerElement = document.getElementById('portfolio-experience-container');
-
-        if (titleElement) titleElement.textContent = title;
-        if (!containerElement) return;
-
-        containerElement.innerHTML = '';
+        DOMPopulator.populateElement('portfolio-experience-title', title);
         
-        items.forEach(item => {
-            const period = item.querySelector('period')?.textContent || '';
-            const role = item.querySelector('role')?.textContent || '';
-            const company = item.querySelector('company')?.textContent || '';
-            const description = item.querySelector('description')?.textContent || '';
-            const highlights = item.querySelectorAll('highlights highlight');
-            
-            let highlightsHtml = '';
-            highlights.forEach(highlight => {
-                highlightsHtml += `<span>${highlight.textContent}</span>`;
-            });
+        DOMPopulator.populateFromXMLNodes('portfolio-experience-container', items, (item) => {
+            const period = this.xmlLoader.extractText(item, 'period');
+            const role = this.xmlLoader.extractText(item, 'role');
+            const company = this.xmlLoader.extractText(item, 'company');
+            const description = this.xmlLoader.extractText(item, 'description');
+            const highlights = XMLContentUtils.extractHighlights(item);
+            const highlightsHtml = XMLContentUtils.createHighlightsHTML(highlights);
             
             const itemElement = document.createElement('div');
             itemElement.className = 'experience-item';
@@ -112,23 +75,17 @@ class PortfolioLoader {
                 </div>
             `;
             
-            containerElement.appendChild(itemElement);
+            return itemElement;
         });
     }
 
     populateHobbies(title, items) {
-        const titleElement = document.getElementById('portfolio-hobbies-title');
-        const containerElement = document.getElementById('portfolio-hobbies-container');
-
-        if (titleElement) titleElement.textContent = title;
-        if (!containerElement) return;
-
-        containerElement.innerHTML = '';
+        DOMPopulator.populateElement('portfolio-hobbies-title', title);
         
-        items.forEach(item => {
-            const icon = item.querySelector('icon')?.textContent || '';
-            const title = item.querySelector('title')?.textContent || '';
-            const description = item.querySelector('description')?.textContent || '';
+        DOMPopulator.populateFromXMLNodes('portfolio-hobbies-container', items, (item) => {
+            const icon = this.xmlLoader.extractText(item, 'icon');
+            const title = this.xmlLoader.extractText(item, 'title');
+            const description = this.xmlLoader.extractText(item, 'description');
             
             const itemElement = document.createElement('div');
             itemElement.className = 'hobby-card';
@@ -138,15 +95,14 @@ class PortfolioLoader {
                 <p>${description}</p>
             `;
             
-            containerElement.appendChild(itemElement);
+            return itemElement;
         });
     }
 
     handleError() {
-        console.warn('Using fallback content for portfolio section');
-        
-        const titleElement = document.getElementById('portfolio-title');
-        if (titleElement) titleElement.textContent = 'Portfolio';
+        XMLContentUtils.handleXMLError('portfolio', {
+            'portfolio-title': 'Portfolio'
+        });
     }
 }
 
