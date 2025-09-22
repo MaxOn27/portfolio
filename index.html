@@ -1,152 +1,20 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Maksym Tyzhnenko - Full-Stack Engineer with 3+ years experience. Passionate about clean code, rapid learning, and collaborative development.">
-    <meta name="keywords" content="full-stack developer, software engineer, web developer, Maksym Tyzhnenko, Ukraine developer">
-    <meta name="author" content="Maksym Tyzhnenko">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-    
-    <link rel="stylesheet" href="./styles/base.css">
-    <link rel="stylesheet" href="./styles/layout.css">
-    <link rel="stylesheet" href="./styles/themes.css">
-    <link rel="stylesheet" href="./styles/components/me.css">
-    <link rel="stylesheet" href="./styles/components/portfolio.css">
-    <link rel="stylesheet" href="styles/components/contacts.css">
-    <link rel="stylesheet" href="./styles/components/about.css">
-    <link rel="stylesheet" href="./styles/responsive.css">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Maksym Tyzhnenko - Full-Stack Engineer with 3+ years experience. Passionate about clean code, rapid learning, and collaborative development." />
+    <meta name="keywords" content="full-stack developer, software engineer, web developer, Maksym Tyzhnenko, Ukraine developer" />
+    <meta name="author" content="Maksym Tyzhnenko" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+
     <title>Maksym Tyzhnenko - Full-Stack Engineer</title>
-    
-    <script src="./node_modules/@max-on-27/xml-content-loader/browser.js"></script>
-    <script defer src="./scripts/JSONLoader.js"></script>
-    <script defer src="./scripts/me-loader.js"></script>
-    <script defer src="./scripts/about-loader.js"></script>
-    <script defer src="./scripts/portfolio-loader.js"></script>
-    <script defer src="./scripts/contacts-loader.js"></script>
-</head>
-<body>
-    <a href="#main" class="skip-link">Skip to main content</a>
-    
-    <header class="header-section" role="banner">
-        <div class="site-header-name">Maksym T.</div>
-        <nav class="site-header" role="navigation" aria-label="Main navigation">
-            <a href="#me" aria-label="Go to Me section">Me</a>
-            <span class="nav-separator" aria-hidden="true">|</span>
-            <a href="#about" aria-label="Go to About section">About</a>
-            <span class="nav-separator" aria-hidden="true">|</span>
-            <a href="#portfolio" aria-label="Go to Portfolio section">Portfolio</a>
-            <span class="nav-separator" aria-hidden="true">|</span>
-            <a href="#contacts" aria-label="Go to Contacts section">Contacts</a>
-        </nav>
-    </header>
-    <main id="main" class="main-portfolio" role="main">
-        <section id="me">
-            <img id="me-avatar" src="" alt="" width="500" height="600" loading="lazy">
-            <div class="me-profession">
-                <h2 id="me-name"></h2>
-                <h2 id="me-title"></h2>
-                <p>
-                    <span id="me-about-label"></span>
-                    <br>
-                    <br>
-                    <span id="me-description"></span>
-                </p>
-            </div>
-        </section>
-        <section id="about">
-            <div class="about-container">
-                <h2 id="about-title" class="about-title"></h2>
-                
-                <div class="about-content">
-                    <div class="about-intro">
-                        <div class="intro-text">
-                            <h3 id="about-greeting"></h3>
-                            <p id="about-intro-description" class="intro-description"></p>
-                            <p id="about-intro-mission" class="intro-mission"></p>
-                        </div>
-                        <div id="about-stats-container" class="intro-stats">
-                        </div>
-                    </div>
-
-                    <div class="about-section">
-                        <h3 class="section-title">
-                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
-                            <span id="about-education-title"></span>
-                        </h3>
-                        <div id="about-education-container" class="education-timeline"></div>
-                    </div>
-
-                    <div class="about-section">
-                        <h3 class="section-title">
-                            <i class="fas fa-lightbulb" aria-hidden="true"></i>
-                            <span id="about-philosophy-title"></span>
-                        </h3>
-                        <div id="about-philosophy-container" class="philosophy-grid"></div>
-                    </div>
-
-                    <div class="about-section">
-                        <h3 class="section-title">
-                            <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
-                            <span id="about-journey-title"></span>
-                        </h3>
-                        <div id="about-journey-container" class="journey-content">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section id="portfolio">
-            <div class="portfolio-container">
-                <h2 id="portfolio-title" class="portfolio-title"></h2>
-                
-                <div class="portfolio-section">
-                    <h3 class="section-title">
-                        <i class="fas fa-code" aria-hidden="true"></i>
-                        <span id="portfolio-skills-title"></span>
-                    </h3>
-                    <div id="portfolio-skills-container" class="skills-grid">
-                    </div>
-                </div>
-
-                <div class="portfolio-section">
-                    <h3 class="section-title">
-                        <i class="fas fa-briefcase" aria-hidden="true"></i>
-                        <span id="portfolio-experience-title"></span>
-                    </h3>
-                    <div id="portfolio-experience-container" class="experience-timeline">
-                    </div>
-                </div>
-
-                <div class="portfolio-section">
-                    <h3 class="section-title">
-                        <i class="fas fa-heart" aria-hidden="true"></i>
-                        <span id="portfolio-hobbies-title"></span>
-                    </h3>
-                    <div id="portfolio-hobbies-container" class="hobbies-grid">
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <section id="contacts">
-            <div class="contacts-container">
-                <h2 id="contacts-title" class="contacts-title"></h2>
-                
-                <div class="contacts-content">
-                    <p id="contacts-description" class="contacts-description"></p>
-                    
-                    <div id="contacts-links-container" class="contacts-links">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
