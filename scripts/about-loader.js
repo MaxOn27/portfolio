@@ -1,36 +1,36 @@
 class AboutLoader {
     constructor() {
-        this.xmlPath = './data/about.xml';
-        this.xmlLoader = new XMLLoader();
+        this.jsonPath = './data/about.json';
+        this.jsonLoader = new JSONLoader();
     }
 
     async loadAboutData() {
         try {
-            const xmlDoc = await this.xmlLoader.loadXML(this.xmlPath);
-            this.populateContent(xmlDoc);
+            const data = await this.jsonLoader.loadJSON(this.jsonPath);
+            this.populateContent(data);
         } catch (error) {
             console.error('Error loading about data:', error);
             this.handleError();
         }
     }
 
-    populateContent(xmlDoc) {
-        const title = xmlDoc.querySelector('about > title')?.textContent || '';
-        
-        const greeting = xmlDoc.querySelector('intro greeting')?.textContent || '';
-        const introDescription = xmlDoc.querySelector('intro description')?.textContent || '';
-        const mission = xmlDoc.querySelector('intro mission')?.textContent || '';
-        
-        const stats = xmlDoc.querySelectorAll('intro stats stat');
-        
-        const educationTitle = xmlDoc.querySelector('education title')?.textContent || '';
-        const educationItems = xmlDoc.querySelectorAll('education items item');
-        
-        const philosophyTitle = xmlDoc.querySelector('philosophy title')?.textContent || '';
-        const philosophyItems = xmlDoc.querySelectorAll('philosophy items item');
-        
-        const journeyTitle = xmlDoc.querySelector('journey title')?.textContent || '';
-        const journeyParagraphs = xmlDoc.querySelectorAll('journey paragraphs paragraph');
+    populateContent(data) {
+        const title = data.title || '';
+
+        const greeting = data.intro?.greeting || '';
+        const introDescription = data.intro?.description || '';
+        const mission = data.intro?.mission || '';
+
+        const stats = data.intro?.stats || [];
+
+        const educationTitle = data.education?.title || '';
+        const educationItems = data.education?.items || [];
+
+        const philosophyTitle = data.philosophy?.title || '';
+        const philosophyItems = data.philosophy?.items || [];
+
+        const journeyTitle = data.journey?.title || '';
+        const journeyParagraphs = data.journey?.paragraphs || [];
 
         this.populateTitle(title);
         this.populateIntro(greeting, introDescription, mission);
@@ -57,8 +57,8 @@ class AboutLoader {
         statsContainer.innerHTML = '';
         
         stats.forEach(stat => {
-            const number = stat.querySelector('number')?.textContent || '';
-            const label = stat.querySelector('label')?.textContent || '';
+            const number = stat.number || '';
+            const label = stat.label || '';
             
             const statElement = document.createElement('div');
             statElement.className = 'stat-item';
@@ -81,15 +81,15 @@ class AboutLoader {
         containerElement.innerHTML = '';
         
         items.forEach(item => {
-            const period = item.querySelector('period')?.textContent || '';
-            const degree = item.querySelector('degree')?.textContent || '';
-            const institution = item.querySelector('institution')?.textContent || '';
-            const description = item.querySelector('description')?.textContent || '';
-            const highlights = item.querySelectorAll('highlights highlight');
-            
+            const period = item.period || '';
+            const degree = item.degree || '';
+            const institution = item.institution || '';
+            const description = item.description || '';
+            const highlights = item.highlights || [];
+
             let highlightsHtml = '';
             highlights.forEach(highlight => {
-                highlightsHtml += `<span>${highlight.textContent}</span>`;
+                highlightsHtml += `<span>${highlight}</span>`;
             });
             
             const itemElement = document.createElement('div');
@@ -118,9 +118,9 @@ class AboutLoader {
         containerElement.innerHTML = '';
         
         items.forEach(item => {
-            const icon = item.querySelector('icon')?.textContent || '';
-            const title = item.querySelector('title')?.textContent || '';
-            const description = item.querySelector('description')?.textContent || '';
+            const icon = item.icon || '';
+            const title = item.title || '';
+            const description = item.description || '';
             
             const itemElement = document.createElement('div');
             itemElement.className = 'philosophy-item';
@@ -145,15 +145,14 @@ class AboutLoader {
         
         paragraphs.forEach(paragraph => {
             const pElement = document.createElement('p');
-            pElement.textContent = paragraph.textContent;
+            pElement.textContent = paragraph;
             containerElement.appendChild(pElement);
         });
     }
 
     handleError() {
-        XMLContentUtils.handleXMLError('about', {
-            'about-title': 'About Me'
-        });
+        console.warn('Using fallback content for about section');
+        DOMPopulator.populateElement('about-title', 'About Me');
     }
 }
 

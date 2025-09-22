@@ -1,0 +1,30 @@
+{
+  "title": "Get in touch",
+  "description": "Feel free to reach out to me through any of the following platforms. I'm always open to discussing new opportunities, collaborations, or just having a chat about technology!",
+  "links": [
+    {
+      "href": "https://www.linkedin.com/in/🇺🇦max-tyzhnenko🇺🇦-9a5a321b4",
+      "target": "_blank",
+      "cssClass": "contact-link linkedin",
+      "icon": "fab fa-linkedin",
+      "title": "LinkedIn",
+      "description": "Connect with me professionally"
+    },
+    {
+      "href": "https://github.com/MaxOn27",
+      "target": "_blank",
+      "cssClass": "contact-link github",
+      "icon": "fab fa-github",
+      "title": "GitHub",
+      "description": "Check out my projects and code"
+    },
+    {
+      "href": "mailto:maxym271212@gmail.com",
+      "target": "",
+      "cssClass": "contact-link gmail",
+      "icon": "fas fa-envelope",
+      "title": "Gmail",
+      "description": "maxym271212@gmail.com"
+    }
+  ]
+}

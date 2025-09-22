@@ -1,0 +1,11 @@
+{
+  "personal": {
+    "name": "MAKSYM TYZHNENKO",
+    "title": "FULL-STACK ENGINEER",
+    "avatar": "./assets/avatar.jpeg"
+  },
+  "about": {
+    "label": "About",
+    "description": "Passionate engineer with 3 + years' experience from Chernivtsi, Ukraine. Actively seeking new roles, challenges, and opportunities to grow — valued for rapid learning, clean code, and a collaborative spirit."
+  }
+}

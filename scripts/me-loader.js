@@ -1,26 +1,26 @@
 class MeLoader {
     constructor() {
-        this.xmlPath = './data/me.xml';
-        this.xmlLoader = new XMLLoader();
+        this.jsonPath = './data/me.json';
+        this.jsonLoader = new JSONLoader();
     }
 
     async loadMeData() {
         try {
-            const xmlDoc = await this.xmlLoader.loadXML(this.xmlPath);
-            this.populateContent(xmlDoc);
+            const data = await this.jsonLoader.loadJSON(this.jsonPath);
+            this.populateContent(data);
         } catch (error) {
             console.error('Error loading me data:', error);
             this.handleError();
         }
     }
 
-    populateContent(xmlDoc) {
-        // Extract data from XML
-        const name = this.xmlLoader.extractText(xmlDoc, 'personal name');
-        const title = this.xmlLoader.extractText(xmlDoc, 'personal title');
-        const avatar = this.xmlLoader.extractText(xmlDoc, 'personal avatar');
-        const aboutLabel = this.xmlLoader.extractText(xmlDoc, 'about label');
-        const description = this.xmlLoader.extractText(xmlDoc, 'about description');
+    populateContent(data) {
+        // Extract data from JSON
+        const name = data.personal?.name || '';
+        const title = data.personal?.title || '';
+        const avatar = data.personal?.avatar || '';
+        const aboutLabel = data.about?.label || '';
+        const description = data.about?.description || '';
 
         // Populate HTML elements using DOMPopulator
         DOMPopulator.populateElement('me-name', `I'M ${name}.`);
@@ -39,7 +39,10 @@ class MeLoader {
             'me-description': 'Passionate engineer with 3+ years\' experience from Chernivtsi, Ukraine. Actively seeking new roles, challenges, and opportunities to grow — valued for rapid learning, clean code, and a collaborative spirit.'
         };
 
-        XMLContentUtils.handleXMLError('me', fallbackContent);
+        console.warn('Using fallback content for me section');
+        Object.entries(fallbackContent).forEach(([selector, content]) => {
+            DOMPopulator.populateElement(selector, content);
+        });
         
         DOMPopulator.populateAttribute('me-avatar', 'src', './assets/avatar.jpeg');
         DOMPopulator.populateAttribute('me-avatar', 'alt', 'Professional headshot of Maksym Tyzhnenko');
