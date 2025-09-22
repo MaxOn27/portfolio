@@ -1,0 +1,107 @@
+{
+  "title": "Portfolio",
+  "skills": {
+    "title": "Skills",
+    "categories": [
+      {
+        "name": "Frontend",
+        "tags": [
+          "React",
+          "JavaScript",
+          "TypeScript",
+          "HTML5",
+          "CSS3",
+          "SASS/SCSS",
+          "Mantine",
+          "Bootstrap"
+        ]
+      },
+      {
+        "name": "Backend",
+        "tags": [
+          "Node.js",
+          "Express",
+          "NestJS",
+          "REST APIs",
+          "ORMs"
+        ]
+      },
+      {
+        "name": "Database & Tools",
+        "tags": [
+          "PostgreSQL",
+          "Redis",
+          "Git",
+          "Docker",
+          "GCP"
+        ]
+      }
+    ]
+  },
+  "experience": {
+    "title": "Experience",
+    "items": [
+      {
+        "period": "2023 - Present",
+        "role": "Full-Stack Engineer",
+        "company": "InterCode, Ukraine",
+        "description": "Full-stack Engineer working with React frontend (navigation, routes, components, utils) and Node.js/NestJS backend technologies. Built scalable applications using TypeORM, PostgreSQL, GCP, and Knex for data management and cloud infrastructure. Specialized in creating and optimizing database queries for cost-effective performance.",
+        "highlights": [
+          "• Authorization/Authentication systems implementation",
+          "• Integration of 3rd party APIs",
+          "• Working with BigQuery for data analytics",
+          "• Debugging complex full-stack applications"
+        ]
+      },
+      {
+        "period": "2021 - 2023",
+        "role": "Front-end Engineer",
+        "company": "Qlicks, Ukraine",
+        "description": "Frontend engineer working with JavaScript, jQuery, SCSS, WordPress, MySQL, and Styled Components. Developed an internal dashboard for company client (real estate investor) to view and manage real estate owners seeking investment opportunities. Practiced Agile methodology with Git version control and Underscore.js utilities.",
+        "highlights": [
+          "• Built dashboard for investor client to view real estate owners seeking investment",
+          "• Implemented responsive UI using SCSS and Styled Components",
+          "• Integrated WordPress CMS with MySQL database",
+          "• Collaborated in Agile development environment"
+        ]
+      },
+      {
+        "period": "2020 - 2021",
+        "role": "Front-end Engineer",
+        "company": "PreferGames, Ukraine",
+        "description": "Frontend engineer specializing in slot game development using SASS, JavaScript, React Class components, PixiJS, and canvas. Created interactive gaming experiences with smooth animations and engaging user interfaces for online slot games.",
+        "highlights": [
+          "• Developed slot games using PixiJS and canvas for graphics rendering",
+          "• Built interactive gaming components with React Class components",
+          "• Implemented game animations and visual effects",
+          "• Styled gaming interfaces using SASS"
+        ]
+      }
+    ]
+  },
+  "hobbies": {
+    "title": "Hobbies & Interests",
+    "items": [
+      {
+        "icon": "fas fa-laptop-code",
+        "title": "Open Source",
+        "description": "Contributing to open-source projects and building tools for the developer community"
+      },
+      {
+        "icon": "fas fa-book",
+        "title": "Continuous Learning",
+        "description": "Always exploring new technologies, frameworks, and programming paradigms"
+      },
+      {
+        "icon": "fas fa-users",
+        "title": "Tech Community",
+        "description": "Participating in developer meetups, conferences, and knowledge-sharing sessions"
+      },
+      {
+        "icon": "fas fa-rocket",
+        "title": "Side Projects",
+        "description": "Building personal projects to experiment with new ideas and technologies"
+      }
+    ]
+  }
+}

@@ -1,27 +1,27 @@
 class PortfolioLoader {
     constructor() {
-        this.xmlPath = './data/portfolio.xml';
-        this.xmlLoader = new XMLLoader();
+        this.jsonPath = './data/portfolio.json';
+        this.jsonLoader = new JSONLoader();
     }
 
     async loadPortfolioData() {
         try {
-            const xmlDoc = await this.xmlLoader.loadXML(this.xmlPath);
-            this.populateContent(xmlDoc);
+            const data = await this.jsonLoader.loadJSON(this.jsonPath);
+            this.populateContent(data);
         } catch (error) {
             console.error('Error loading portfolio data:', error);
             this.handleError();
         }
     }
 
-    populateContent(xmlDoc) {
-        const title = this.xmlLoader.extractText(xmlDoc, 'portfolio > title');
-        const skillsTitle = this.xmlLoader.extractText(xmlDoc, 'skills title');
-        const skillCategories = this.xmlLoader.extractMultiple(xmlDoc, 'skills categories category');
-        const experienceTitle = this.xmlLoader.extractText(xmlDoc, 'experience title');
-        const experienceItems = this.xmlLoader.extractMultiple(xmlDoc, 'experience items item');
-        const hobbiesTitle = this.xmlLoader.extractText(xmlDoc, 'hobbies title');
-        const hobbiesItems = this.xmlLoader.extractMultiple(xmlDoc, 'hobbies items item');
+    populateContent(data) {
+        const title = data.title || '';
+        const skillsTitle = data.skills?.title || '';
+        const skillCategories = data.skills?.categories || [];
+        const experienceTitle = data.experience?.title || '';
+        const experienceItems = data.experience?.items || [];
+        const hobbiesTitle = data.hobbies?.title || '';
+        const hobbiesItems = data.hobbies?.items || [];
 
         this.populateTitle(title);
         this.populateSkills(skillsTitle, skillCategories);
@@ -36,10 +36,10 @@ class PortfolioLoader {
     populateSkills(title, categories) {
         DOMPopulator.populateElement('portfolio-skills-title', title);
         
-        DOMPopulator.populateFromXMLNodes('portfolio-skills-container', categories, (category) => {
-            const name = this.xmlLoader.extractText(category, 'name');
-            const tags = XMLContentUtils.extractTags(category);
-            const tagsHtml = XMLContentUtils.createTagsHTML(tags);
+        this.populateFromJSONArray('portfolio-skills-container', categories, (category) => {
+            const name = category.name || '';
+            const tags = category.tags || [];
+            const tagsHtml = this.createTagsHTML(tags);
             
             const categoryElement = document.createElement('div');
             categoryElement.className = 'skill-category';
@@ -55,13 +55,13 @@ class PortfolioLoader {
     populateExperience(title, items) {
         DOMPopulator.populateElement('portfolio-experience-title', title);
         
-        DOMPopulator.populateFromXMLNodes('portfolio-experience-container', items, (item) => {
-            const period = this.xmlLoader.extractText(item, 'period');
-            const role = this.xmlLoader.extractText(item, 'role');
-            const company = this.xmlLoader.extractText(item, 'company');
-            const description = this.xmlLoader.extractText(item, 'description');
-            const highlights = XMLContentUtils.extractHighlights(item);
-            const highlightsHtml = XMLContentUtils.createHighlightsHTML(highlights);
+        this.populateFromJSONArray('portfolio-experience-container', items, (item) => {
+            const period = item.period || '';
+            const role = item.role || '';
+            const company = item.company || '';
+            const description = item.description || '';
+            const highlights = item.highlights || [];
+            const highlightsHtml = this.createHighlightsHTML(highlights);
             
             const itemElement = document.createElement('div');
             itemElement.className = 'experience-item';
@@ -82,10 +82,10 @@ class PortfolioLoader {
     populateHobbies(title, items) {
         DOMPopulator.populateElement('portfolio-hobbies-title', title);
         
-        DOMPopulator.populateFromXMLNodes('portfolio-hobbies-container', items, (item) => {
-            const icon = this.xmlLoader.extractText(item, 'icon');
-            const title = this.xmlLoader.extractText(item, 'title');
-            const description = this.xmlLoader.extractText(item, 'description');
+        this.populateFromJSONArray('portfolio-hobbies-container', items, (item) => {
+            const icon = item.icon || '';
+            const title = item.title || '';
+            const description = item.description || '';
             
             const itemElement = document.createElement('div');
             itemElement.className = 'hobby-card';
@@ -99,10 +99,34 @@ class PortfolioLoader {
         });
     }
 
-    handleError() {
-        XMLContentUtils.handleXMLError('portfolio', {
-            'portfolio-title': 'Portfolio'
+    populateFromJSONArray(containerSelector, items, renderer, className = '') {
+        const container = DOMPopulator.clearContainer(containerSelector);
+        if (!container) return null;
+
+        items.forEach(item => {
+            const element = renderer(item);
+            if (element) {
+                if (className) {
+                    element.className = className;
+                }
+                container.appendChild(element);
+            }
         });
+
+        return container;
+    }
+
+    createTagsHTML(tags) {
+        return tags.map(tag => `<span class="skill-tag">${tag}</span>`).join('');
+    }
+
+    createHighlightsHTML(highlights) {
+        return highlights.map(highlight => `<span>${highlight}</span>`).join('');
+    }
+
+    handleError() {
+        console.warn('Using fallback content for portfolio section');
+        DOMPopulator.populateElement('portfolio-title', 'Portfolio');
     }
 }
 

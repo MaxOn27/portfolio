@@ -1,23 +1,23 @@
 class ContactsLoader {
     constructor() {
-        this.xmlPath = './data/contacts.xml';
-        this.xmlLoader = new XMLLoader();
+        this.jsonPath = './data/contacts.json';
+        this.jsonLoader = new JSONLoader();
     }
 
     async loadContactsData() {
         try {
-            const xmlDoc = await this.xmlLoader.loadXML(this.xmlPath);
-            this.populateContent(xmlDoc);
+            const data = await this.jsonLoader.loadJSON(this.jsonPath);
+            this.populateContent(data);
         } catch (error) {
             console.error('Error loading contacts data:', error);
             this.handleError();
         }
     }
 
-    populateContent(xmlDoc) {
-        const title = xmlDoc.querySelector('contacts > title')?.textContent || '';
-        const description = xmlDoc.querySelector('contacts > description')?.textContent || '';
-        const links = xmlDoc.querySelectorAll('contacts links link');
+    populateContent(data) {
+        const title = data.title || '';
+        const description = data.description || '';
+        const links = data.links || [];
 
         this.populateTitle(title);
         this.populateDescription(description);
@@ -39,12 +39,12 @@ class ContactsLoader {
         containerElement.innerHTML = '';
         
         links.forEach(link => {
-            const href = link.querySelector('href')?.textContent || '';
-            const target = link.querySelector('target')?.textContent || '';
-            const cssClass = link.querySelector('cssClass')?.textContent || '';
-            const icon = link.querySelector('icon')?.textContent || '';
-            const title = link.querySelector('title')?.textContent || '';
-            const description = link.querySelector('description')?.textContent || '';
+            const href = link.href || '';
+            const target = link.target || '';
+            const cssClass = link.cssClass || '';
+            const icon = link.icon || '';
+            const title = link.title || '';
+            const description = link.description || '';
             
             const linkElement = document.createElement('a');
             linkElement.href = href;
@@ -64,10 +64,9 @@ class ContactsLoader {
     }
 
     handleError() {
-        XMLContentUtils.handleXMLError('contacts', {
-            'contacts-title': 'Get in touch',
-            'contacts-description': 'Feel free to reach out to me through any of the following platforms. I\'m always open to discussing new opportunities, collaborations, or just having a chat about technology!'
-        });
+        console.warn('Using fallback content for contacts section');
+        DOMPopulator.populateElement('contacts-title', 'Get in touch');
+        DOMPopulator.populateElement('contacts-description', 'Feel free to reach out to me through any of the following platforms. I\'m always open to discussing new opportunities, collaborations, or just having a chat about technology!');
     }
 }
 

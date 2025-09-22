@@ -1,0 +1,82 @@
+{
+  "title": "About Me",
+  "intro": {
+    "greeting": "Hello! I'm Maksym",
+    "description": "A passionate full-stack engineer from Chernivtsi, Ukraine, with over 3 years of experience crafting digital solutions. I believe in writing clean, maintainable code and creating user-centered applications that make a difference.",
+    "mission": "My mission is to bridge the gap between complex technical requirements and intuitive user experiences, while continuously learning and growing in this ever-evolving field.",
+    "stats": [
+      {
+        "number": "3+",
+        "label": "Years Experience"
+      },
+      {
+        "number": "15+",
+        "label": "Projects Completed"
+      },
+      {
+        "number": "∞",
+        "label": "Lines of Code"
+      }
+    ]
+  },
+  "education": {
+    "title": "Education & Learning",
+    "items": [
+      {
+        "period": "2018 - 2022",
+        "degree": "Bachelor of Computer Science",
+        "institution": "Chernivtsi National University, Ukraine",
+        "description": "Focused on software engineering principles, algorithms, and data structures. Completed coursework in web development, database systems, and software architecture.",
+        "highlights": [
+          "• Software Engineering & Design Patterns",
+          "• Data Structures & Algorithms",
+          "• Web Development Technologies"
+        ]
+      },
+      {
+        "period": "2020 - Present",
+        "degree": "Continuous Learning",
+        "institution": "Online Platforms & Certifications",
+        "description": "Committed to staying current with industry trends through online courses, certifications, and hands-on projects with modern technologies.",
+        "highlights": [
+          "• React & Vue.js Advanced Patterns",
+          "• Cloud Computing (AWS)",
+          "• DevOps & CI/CD Practices"
+        ]
+      }
+    ]
+  },
+  "philosophy": {
+    "title": "Development Philosophy",
+    "items": [
+      {
+        "icon": "fas fa-code",
+        "title": "Clean Code",
+        "description": "Writing readable, maintainable code that stands the test of time and scale."
+      },
+      {
+        "icon": "fas fa-users",
+        "title": "Collaboration",
+        "description": "Believing in the power of teamwork and open communication to achieve great results."
+      },
+      {
+        "icon": "fas fa-rocket",
+        "title": "Innovation",
+        "description": "Embracing new technologies and methodologies to solve problems creatively."
+      },
+      {
+        "icon": "fas fa-heart",
+        "title": "User-Centric",
+        "description": "Prioritizing user experience and accessibility in every project I work on."
+      }
+    ]
+  },
+  "journey": {
+    "title": "My Journey",
+    "paragraphs": [
+      "My path to software development began during university, where I discovered my passion for creating digital solutions. What started as curiosity about how websites work evolved into a deep appreciation for the craft of programming.",
+      "Throughout my career, I've had the opportunity to work on diverse projects, from small business websites to complex web applications. Each project has taught me something new and reinforced my belief that technology should serve people and make their lives better.",
+      "Today, I'm actively seeking new challenges and opportunities to grow, collaborate with talented teams, and contribute to meaningful projects that have a positive impact."
+    ]
+  }
+}
